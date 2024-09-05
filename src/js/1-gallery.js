@@ -65,21 +65,6 @@ const images = [
       },
       ];
   
-  // const markup = images.map(image => {
-  //   return `
-  //   <li class="gallery-item">
-  //       <a class="gallery-link" href="${image.original}">     
-  //         <img
-  //         class="gallery-image"
-  //         src="${image.preview}"
-  //         data-source="${image.original}"
-  //         alt="${image.description}"
-  //         />
-  //         </a>
-  //         </li>
-  //   `;
-  // }).join('');
-  
   
   const container = document.querySelector(".gallery");
   container.insertAdjacentHTML('beforeend', generatedImgMarkup(images));
@@ -92,7 +77,6 @@ const images = [
           <img
           class="gallery-image"
           src="${image.preview}"
-          data-source="${image.original}"
           alt="${image.description}"
           />
           </a>
@@ -100,6 +84,8 @@ const images = [
     `;
   }).join('');
   };
+
+          //   data-source="${image.original}"
   
   container.style.margin = "auto";
   container.style.paddingLeft = "0px";
@@ -146,7 +132,11 @@ const images = [
   
   }
   
-// import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm"
+  import SimpleLightbox from "simplelightbox";
+  import 'simplelightbox/dist/simple-lightbox.min.css';
+
+
+  // import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm"
 
 // import SimpleLightbox from 'simplelightbox';
 // import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -158,3 +148,4 @@ const images = [
 //     captionsData: 'alt',
 //     captionDelay: 250,
 // });
+
