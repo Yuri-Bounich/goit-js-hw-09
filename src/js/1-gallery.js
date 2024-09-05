@@ -85,7 +85,6 @@ const images = [
   }).join('');
   };
 
-          //   data-source="${image.original}"
   
   container.style.margin = "auto";
   container.style.paddingLeft = "0px";
@@ -120,32 +119,19 @@ const images = [
       console.log('Click on UL');
       return;
     }
-    // console.log(event.target);
-    // console.log(event.currentTarget);
     const instance = basicLightbox.create(`
       <img src="${event.target.dataset.source}" width="1112" height="640"/>
       `)
       
       instance.show()
-      
-      // console.log(basicLightbox)
-  
   }
   
   import SimpleLightbox from "simplelightbox";
   import 'simplelightbox/dist/simple-lightbox.min.css';
 
+  const galleryBox = new SimpleLightbox('.gallery a', { 
+    captions: true,
+    captionsData: 'alt',
+    captionDelay: 250, });
 
-  // import SimpleLightbox from "simplelightbox/dist/simple-lightbox.esm"
-
-// import SimpleLightbox from 'simplelightbox';
-// import 'simplelightbox/dist/simple-lightbox.min.css';
-  
-  
-// const lightbox = new SimpleLightbox('.gallery-image', {
-//     // Налаштування (опційно)
-//     captions: true,
-//     captionsData: 'alt',
-//     captionDelay: 250,
-// });
 
