@@ -6,3 +6,9 @@
 */
 /* Common styles */
 @import url('./reset.css');
+
+.btn-js {background-color: #4E75FF;}
+
+.btn-js:hover {
+  background-color: #6C8CFF;
+}
