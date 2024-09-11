@@ -23,4 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-src/1-gallery_0.html
+src/main.js

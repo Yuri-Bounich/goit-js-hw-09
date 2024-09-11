@@ -1,3 +1,5 @@
+import SimpleLightbox from "simplelightbox";
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const images = [
     {
@@ -65,7 +67,6 @@ const images = [
       },
       ];
   
-  
   const container = document.querySelector(".gallery");
   container.insertAdjacentHTML('beforeend', generatedImgMarkup(images));
   
@@ -78,6 +79,7 @@ const images = [
           class="gallery-image"
           src="${image.preview}"
           alt="${image.description}"
+          data-source="${image.original}"
           />
           </a>
           </li>
@@ -103,35 +105,19 @@ const images = [
     });
   
   const links = document.querySelectorAll('.gallery-link');
-  
-  // Додаємо обробник подій для кожного посилання
-  links.forEach(link => {
-    link.addEventListener('click', function(event) {
+    
+// Використовуємо властивість onclick замість addEventListener
+links.forEach(link => {
+  link.onclick = function(event) {
       event.preventDefault(); // Скасовуємо стандартну поведінку (завантаження файлу)
       console.log('Download prevented');
-    });
-  });
-  
-  container.addEventListener("click", onImgClick);
-  
-  function onImgClick(event) {
-    if (event.target === event.currentTarget) {
-      console.log('Click on UL');
-      return;
-    }
-    const instance = basicLightbox.create(`
-      <img src="${event.target.dataset.source}" width="1112" height="640"/>
-      `)
-      
-      instance.show()
-  }
-  
-  import SimpleLightbox from "simplelightbox";
-  import 'simplelightbox/dist/simple-lightbox.min.css';
+  };
+});
 
-  const galleryBox = new SimpleLightbox('.gallery a', { 
-    captions: true,
-    captionsData: 'alt',
-    captionDelay: 250, });
+// Ініціалізація SimpleLightbox
+const galleryBox = new SimpleLightbox('.gallery a', { 
+  captionsData: 'alt',
+  captionDelay: 250, });
+
 
 
