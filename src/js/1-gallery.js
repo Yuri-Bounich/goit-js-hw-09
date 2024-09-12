@@ -106,14 +106,6 @@ const images = [
   
   const links = document.querySelectorAll('.gallery-link');
     
-// Використовуємо властивість onclick замість addEventListener
-links.forEach(link => {
-  link.onclick = function(event) {
-      event.preventDefault(); // Скасовуємо стандартну поведінку (завантаження файлу)
-      console.log('Download prevented');
-  };
-});
-
 // Ініціалізація SimpleLightbox
 const galleryBox = new SimpleLightbox('.gallery a', { 
   captionsData: 'alt',
